@@ -88,38 +88,10 @@
           </ul>
         </div>
       </nav>
-
-      <div class="container-fluid">
-        <h1 class="mt-4"><b>fantAlytics</b></h1>
-				<h3>Fantasy Football Trade Analyzer</h3>
-				
-					<br>
-					<h3>Team A</h3>
-					<input type="text" id="searchOne" placeholder="Add Player" />
-					<br><br>
-
-					<!-- Suggestions will be displayed in below div. -->
-					<div id="display"></div>
-
-      </div>
-    </div>
-    <!-- /#page-content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
+       <!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
   </script>
-
-</body>
-
-</html>
