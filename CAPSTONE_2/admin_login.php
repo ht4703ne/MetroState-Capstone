@@ -58,26 +58,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         mysqli_close($db);
 }
 ?>
-
+<div style="text-align: center">
     <form class="form-signin" method="post" >
-      <h1 class="h3 mb-3 font-weight-normal" id="form-labels">Please sign in</h1>
+      <h1 class="h3 mb-3 font-weight-normal" id="form-labels"><center>Please sign in</center></h1>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" name="Email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <input type="email" name="Email" id="searchOne" class="email" placeholder="Email address" required autofocus><br />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password"  name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <!-- <div class="checkbox mb-3">
-        <input type="checkbox" value="remember-me">
-        <label>Remember me</label>
-      </div> -->
+      <input type="password"  name="password" id="searchOne" class="password" placeholder="Password" required>
       <div style="white-space:nowrap" class="checkbox mb-3">
         <input type="checkbox" value="remember-me" id="inputRememberMe"/>
         <label for="inputRememberMe">Remember me</label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-primary" type="submit">Sign in</button>
       <br />
-      <?php echo "Don't have an account yet?" ?>
-        <a href="<?php echo url_for('register.php') ?>">Register here</a>
     </form>
-
-
+</div>
+    
  
