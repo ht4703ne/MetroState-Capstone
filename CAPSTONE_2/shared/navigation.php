@@ -80,9 +80,9 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="admin_login.php">Login</a>
-                <a class="dropdown-item" href="#" hidden>Create Admin</a>
+                <a class="dropdown-item" href="#">Create Admin</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" hidden>Log Out</a>
+                <a class="dropdown-item" href="#">Log Out</a>
               </div>
             </li>
           </ul>

@@ -1,5 +1,16 @@
 <?php include('./shared/navigation.php');?>
+<script>
+let divs = document.getElementsByClassName('dropdown-item');
 
+for (let x = 0; x < divs.length; x++) {
+    let div = divs[x];
+    let content = div.innerHTML.trim();
+
+    if (content == 'Create Admin' || content == 'Log Out') {
+        div.style.display = 'none';
+    }
+}
+</script>
  <?php
 //Database connection.
 $con = MySQLi_connect(
@@ -16,7 +27,7 @@ if (MySQLi_connect_errno()) {
 
 <?php
 $email = "";
-$password = "";
+$a_password = "";
 
 
 global $db;
@@ -26,12 +37,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $email = trim($_POST["email"]);
     }
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($_POST["a_password"]))){
         $password_err = "Please enter your password.";
     } else{
         $password = trim($_POST["a_password"]);
     }
-        $sql = "SELECT email, a_password FROM admin WHERE email ='".$email."'";
+        $sql = "SELECT email, a_password FROM admin WHERE email =?";
         if($stmt = mysqli_prepare($db, $sql)){
             if(mysqli_stmt_execute($stmt)){
                 mysqli_stmt_store_result($stmt);
@@ -42,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                            echo $email." ".$password;
                             $_SESSION["loggedin"] = true;
                             $_SESSION["email"] = $email;
-                            
+                            header("location:admin.php");
                         } else{
                             echo "The password you entered was not valid.";
                         }
