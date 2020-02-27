@@ -35,6 +35,64 @@
 				font-weight: 900;
 				color: navy;
 			}
+			
+			#display {
+				font-weight: 900;
+				color: navy;
+			}
+			
+			.grid-container {
+				display: grid;
+				grid-template-columns: auto auto;
+				
+			}
+			.grid-item {
+				padding: 10px;
+				font-size: 30px;
+				text-align: center;
+			}
+			
+			
+			.button {
+				display: inline-block;
+				border-radius: 4px;
+				background-color: #000080;
+				border: none;
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 28px;
+				padding: 20px;
+				width: 200px;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
+			}
+
+		.button span {
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				transition: 0.5s;
+			}
+
+		.button span:after {
+				content: '\00bb';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+
+		.button:hover span {
+				padding-right: 25px;
+			}
+
+		.button:hover span:after {
+				opacity: 1;
+				right: 0;
+			}
+			
 
 </style>
 
@@ -89,17 +147,31 @@
         </div>
       </nav>
 
-      <div class="container-fluid">
-        <h1 class="mt-4"><b>fantAlytics</b></h1>
-				<h3>Fantasy Football Trade Analyzer</h3>
 				
-					<br>
-					<h3>Team A</h3>
-					<input type="text" id="searchOne" placeholder="Add Player" />
-					<br><br>
-
-					<!-- Suggestions will be displayed in below div. -->
-					<div id="display"></div>
+      <div class="container-fluid">
+        
+				
+				
+					<br>					
+					
+						<div class="grid-container">
+						<div class="grid-item"><h1 class="mt-4" align="left"><b>fantAlytics</b></h1><h3 align="left">Fantasy Football Trade Analyzer</h3></div>
+						<div class="grid-item"><button class="button" style="vertical-align:middle"><span>Analyze </span></div>
+						<div class="grid-item">Team A</div>
+						<div class="grid-item">Team B</div>
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>  
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>  
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
+						<div class="grid-item"><div id="display"></div></div>
+						
+						</div>
+						
+						
+						
+						
 
       </div>
     </div>

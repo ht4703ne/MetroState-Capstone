@@ -12,7 +12,7 @@ if (isset($_POST['searchOne'])) {
    $ExecQuery = MySQLi_query($con, $Query);
 //Creating unordered list to display result.
    echo '
-<ul>
+<ul style="list-style-type:none;">
    ';
    //Fetching result from database.
    while ($Result = MySQLi_fetch_array($ExecQuery)) {
