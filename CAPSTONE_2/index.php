@@ -22,22 +22,98 @@
    <script type="text/javascript" src="scripts.js"></script>
 
 <style>
-			#searchOne {
+			#searcha {
 				border-radius: 25px;
-				border: 2px solid #73AD21;
+				border: 2px solid navy;
 				padding: 20px; 
 				width: 400px;
 				height: 10px;  
 				outline: none;
 			}
 
-			#searchOne {
+			#searcha {
 				font-weight: 900;
 				color: navy;
 			}
 			
-			#display {
+			#searchb {
+				border-radius: 25px;
+				border: 2px solid navy;
+				padding: 20px; 
+				width: 400px;
+				height: 10px;  
+				outline: none;
+			}
+
+			#searchb {
 				font-weight: 900;
+				color: navy;
+			}
+			
+			#searchc {
+				border-radius: 25px;
+				border: 2px solid navy;
+				padding: 20px; 
+				width: 400px;
+				height: 10px;  
+				outline: none;
+			}
+
+			#searchc {
+				font-weight: 900;
+				color: navy;
+			}
+			
+			#searchd {
+				border-radius: 25px;
+				border: 2px solid navy;
+				padding: 20px; 
+				width: 400px;
+				height: 10px;  
+				outline: none;
+			}
+
+			#searchd {
+				font-weight: 900;
+				color: navy;
+			}
+			
+			#searche {
+				border-radius: 25px;
+				border: 2px solid navy;
+				padding: 20px; 
+				width: 400px;
+				height: 10px;  
+				outline: none;
+			}
+
+			#searche {
+				font-weight: 900;
+				color: navy;
+			}
+			
+			#searchf {
+				border-radius: 25px;
+				border: 2px solid navy;
+				padding: 20px; 
+				width: 400px;
+				height: 10px;  
+				outline: none;
+			}
+
+			#searchf {
+				font-weight: 900;
+				color: navy;
+			}
+			
+			
+			#displaya {
+				font-weight: 500;
+				color: navy;
+			}
+			
+			#displayb {
+				font-weight: 500;
 				color: navy;
 			}
 			
@@ -50,6 +126,7 @@
 				padding: 10px;
 				font-size: 30px;
 				text-align: center;
+				
 			}
 			
 			
@@ -108,7 +185,7 @@
       <div class="sidebar-heading"><b>fantAlytics</b></div>
       <div class="list-group list-group-flush">
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Top Players</a>
+        <a href="pendingFunction.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
         
       </div>
     </div>
@@ -153,26 +230,23 @@
 				
 				
 					<br>					
-					
 						<div class="grid-container">
-						<div class="grid-item"><h1 class="mt-4" align="left"><b>fantAlytics</b></h1><h3 align="left">Fantasy Football Trade Analyzer</h3></div>
-						<div class="grid-item"><button class="button" style="vertical-align:middle"><span>Analyze </span></div>
-						<div class="grid-item">Team A</div>
-						<div class="grid-item">Team B</div>
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>  
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>  
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchOne" placeholder="Add Player" /></div>
-						<div class="grid-item"><div id="display"></div></div>
+						<div class="grid-item"><h1 class="mt-4" align="left"><b>fantAlytics</b></h1><h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3></div>
+						<div class="grid-item"><button class="button" style="vertical-align:middle"><span>Analyze </span></div>						
+						
+						<div class="grid-item"><h2>Team A</h2></div>
+						<div class="grid-item"><h2>Team B</h2></div>
+						<div class="grid-item"><input type="text" id="searcha" placeholder="Add Player" /></div>  
+						<div class="grid-item"><input type="text" id="searchb" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchc" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchd" placeholder="Add Player" /></div>  
+						<div class="grid-item"><input type="text" id="searche" placeholder="Add Player" /></div>
+						<div class="grid-item"><input type="text" id="searchf" placeholder="Add Player" /></div>
+						
+						<div class="grid-item"><div id="displaya"></div></div>
+						<div class="grid-item"><div id="displayb"></div></div>
 						
 						</div>
-						
-						
-						
-						
-
       </div>
     </div>
     <!-- /#page-content-wrapper -->

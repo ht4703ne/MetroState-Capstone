@@ -1,44 +1,183 @@
-//Getting value from "ajax.php".
-function fill(Value) {
-   //Assigning value to "searchOne" div in "searchOne.php" file.
-   $('#searchOne').val(Value);
-   //Hiding "display" div in "searchOne.php" file.
-   $('#display').hide();
+
+function fill1(Value) {
+   $('#searcha').val(Value);
+   $('#displaya').hide();
 }
 
 $(document).ready(function() {
-   //On pressing a key on "searchOne box" in "searchOne.php" file. This function will be called.
-   $("#searchOne").keyup(function() {
-       //Assigning searchOne box value to javascript variable named as "name".
-       var name = $('#searchOne').val();
-       //Validating, if "name" is empty.
+   $("#searcha").keyup(function() {
+       var name = $('#searcha').val();
        if (name == "") {
-           //Assigning empty value to "display" div in "searchOne.php" file.
-           $("#display").html("");
+           $("#displaya").html("");
        }
-       //If name is not empty.
        else {
-           //AJAX is called.
            $.ajax({
-               //AJAX type is "Post".
                type: "POST",
-               //Data will be sent to "ajax.php".
-               url: "ajax.php",
-               //Data, that will be sent to "ajax.php".
+               url: "ajax.php",        
                data: {
-                   //Assigning value of "name" into "searchOne" variable.
-                   searchOne: name
+
+                   searcha: name
                },
-               //If result found, this funtion will be called.
                success: function(html) {
-                   //Assigning result to "display" div in "searchOne.php" file.
-                   $("#display").html(html).show();
+    
+                   $("#displaya").html(html).show();
                }
            });
        }
    });
-	 
 });
 
 
+
+function fill2(Value) {
+   $('#searchb').val(Value);
+   $('#displayb').hide();
+}
+
+$(document).ready(function() {
+   $("#searchb").keyup(function() {
+       var name = $('#searchb').val();
+       if (name == "") {
+           $("#displayb").html("");
+       }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "ajax.php",        
+               data: {
+
+                   searchb: name
+               },
+               success: function(html) {
+    
+                   $("#displayb").html(html).show();
+               }
+           });
+       }
+   });
+});
+
+
+
+
+function fill3(Value) {
+   $('#searchc').val(Value);
+   $('#displaya').hide();
+}
+
+$(document).ready(function() {
+   $("#searchc").keyup(function() {
+       var name = $('#searchc').val();
+       if (name == "") {
+           $("#displaya").html("");
+       }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "ajax.php",        
+               data: {
+
+                   searchc: name
+               },
+               success: function(html) {
+    
+                   $("#displaya").html(html).show();
+               }
+           });
+       }
+   });
+});
+
+
+
+function fill4(Value) {
+   $('#searchd').val(Value);
+   $('#displayb').hide();
+}
+
+$(document).ready(function() {
+   $("#searchd").keyup(function() {
+       var name = $('#searchd').val();
+       if (name == "") {
+           $("#displayb").html("");
+       }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "ajax.php",        
+               data: {
+
+                   searchd: name
+               },
+               success: function(html) {
+    
+                   $("#displayb").html(html).show();
+               }
+           });
+       }
+   });
+});
+
+
+
+
+function fill5(Value) {
+   $('#searche').val(Value);
+   $('#displaya').hide();
+}
+
+$(document).ready(function() {
+   $("#searche").keyup(function() {
+       var name = $('#searche').val();
+       if (name == "") {
+           $("#displaya").html("");
+       }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "ajax.php",        
+               data: {
+
+                   searche: name
+               },
+               success: function(html) {
+    
+                   $("#displaya").html(html).show();
+               }
+           });
+       }
+   });
+});
+
+
+
+
+
+function fill6(Value) {
+   $('#searchf').val(Value);
+   $('#displayb').hide();
+}
+
+$(document).ready(function() {
+   $("#searchf").keyup(function() {
+       var name = $('#searchf').val();
+       if (name == "") {
+           $("#displayb").html("");
+       }
+       else {
+           $.ajax({
+               type: "POST",
+               url: "ajax.php",        
+               data: {
+
+                   searchf: name
+               },
+               success: function(html) {
+    
+                   $("#displayb").html(html).show();
+               }
+           });
+       }
+   });
+});
 
