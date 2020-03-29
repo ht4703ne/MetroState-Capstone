@@ -71,6 +71,16 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Manage Players
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Player Managment</a>
+                <a class="dropdown-item" href="#">Add Player</a>
+                <a class="dropdown-item" href="#">Delet Player</a>
+              </div>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="https://sleeper.app" target="_blank">Sleeper</a>
             </li>
