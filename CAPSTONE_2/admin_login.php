@@ -1,17 +1,4 @@
 <?php include('./shared/navigation.php');?>
-<script>
-let divs = document.getElementsByClassName('dropdown-item');
-
-for (let x = 0; x < divs.length; x++) {
-    let div = divs[x];
-    let content = div.innerHTML.trim();
-
-    if (content == 'Create Admin' || content == 'Log Out') {
-        div.style.display = 'none';
-    }
-}
-</script>
-
 
 <?php
 session_start();
@@ -74,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" name="email" id="searchOne" class="email" placeholder="Email address" required autofocus><br />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="a_password"  name="a_password" id="searchOne" class="a_password" placeholder="Password" required>
+      <input type="password"  name="a_password" id="searchOne" class="a_password" placeholder="Password" required>
       <div style="white-space:nowrap" class="checkbox mb-3">
         <input type="checkbox" value="remember-me" id="inputRememberMe"/>
         <label for="inputRememberMe">Remember me</label>
