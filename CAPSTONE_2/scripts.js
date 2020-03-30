@@ -1,4 +1,5 @@
 
+// Team A - Box 1
 function fill1(Value) {
    $('#searcha').val(Value);
    $('#displaya').hide();
@@ -15,7 +16,6 @@ $(document).ready(function() {
                type: "POST",
                url: "ajax.php",        
                data: {
-
                    searcha: name
                },
                success: function(html) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
 });
 
 
-
+// Team B - Box 1
 function fill2(Value) {
    $('#searchb').val(Value);
    $('#displayb').hide();
@@ -58,8 +58,7 @@ $(document).ready(function() {
 });
 
 
-
-
+// Team A - Box 2
 function fill3(Value) {
    $('#searchc').val(Value);
    $('#displaya').hide();
@@ -90,6 +89,7 @@ $(document).ready(function() {
 
 
 
+// Team B - Box 2
 function fill4(Value) {
    $('#searchd').val(Value);
    $('#displayb').hide();
@@ -119,8 +119,7 @@ $(document).ready(function() {
 });
 
 
-
-
+// Team A - Box 3
 function fill5(Value) {
    $('#searche').val(Value);
    $('#displaya').hide();
@@ -151,8 +150,7 @@ $(document).ready(function() {
 
 
 
-
-
+// Team B - Box 3
 function fill6(Value) {
    $('#searchf').val(Value);
    $('#displayb').hide();

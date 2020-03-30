@@ -16,163 +16,12 @@
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
 	
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
 	 <!-- Including jQuery is required. -->
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
    <!-- Including our scripting file. -->
    <script type="text/javascript" src="scripts.js"></script>
-
-<style>
-			#searcha {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searcha {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			#searchb {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searchb {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			#searchc {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searchc {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			#searchd {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searchd {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			#searche {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searche {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			#searchf {
-				border-radius: 25px;
-				border: 2px solid navy;
-				padding: 20px; 
-				width: 400px;
-				height: 10px;  
-				outline: none;
-			}
-
-			#searchf {
-				font-weight: 900;
-				color: navy;
-			}
-			
-			
-			#displaya {
-				font-weight: 500;
-				color: navy;
-			}
-			
-			#displayb {
-				font-weight: 500;
-				color: navy;
-			}
-			
-			.grid-container {
-				display: grid;
-				grid-template-columns: auto auto;
-				
-			}
-			.grid-item {
-				padding: 10px;
-				font-size: 30px;
-				text-align: center;
-				
-			}
-			
-			
-			.button {
-				display: inline-block;
-				border-radius: 4px;
-				background-color: #000080;
-				border: none;
-				color: #FFFFFF;
-				text-align: center;
-				font-size: 28px;
-				padding: 20px;
-				width: 200px;
-				transition: all 0.5s;
-				cursor: pointer;
-				margin: 5px;
-			}
-
-		.button span {
-				cursor: pointer;
-				display: inline-block;
-				position: relative;
-				transition: 0.5s;
-			}
-
-		.button span:after {
-				content: '\00bb';
-				position: absolute;
-				opacity: 0;
-				top: 0;
-				right: -20px;
-				transition: 0.5s;
-			}
-
-		.button:hover span {
-				padding-right: 25px;
-			}
-
-		.button:hover span:after {
-				opacity: 1;
-				right: 0;
-			}
-			
-
-</style>
-
 
 </head>
 
@@ -231,17 +80,20 @@
 				
 					<br>					
 						<div class="grid-container">
-						<div class="grid-item"><h1 class="mt-4" align="left"><b>fantAlytics</b></h1><h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3></div>
-						<div class="grid-item"><button class="button" style="vertical-align:middle"><span>Analyze </span></div>						
-						
-						<div class="grid-item"><h2>Team A</h2></div>
-						<div class="grid-item"><h2>Team B</h2></div>
+						<div class="grid-item"><h1 class="mt-4" align="left" style="color:#000080"><b>fantAlytics</b></h1><h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3></div>
+						<div class="grid-item"><button class="button" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>		
+					
+						<div class="grid-item" style="color:#000080"><h2>Team A</h2></div>
+						<div class="grid-item" style="color:#000080"><h2>Team B</h2></div>
 						<div class="grid-item"><input type="text" id="searcha" placeholder="Add Player" /></div>  
 						<div class="grid-item"><input type="text" id="searchb" placeholder="Add Player" /></div>
 						<div class="grid-item"><input type="text" id="searchc" placeholder="Add Player" /></div>
 						<div class="grid-item"><input type="text" id="searchd" placeholder="Add Player" /></div>  
 						<div class="grid-item"><input type="text" id="searche" placeholder="Add Player" /></div>
 						<div class="grid-item"><input type="text" id="searchf" placeholder="Add Player" /></div>
+						
+						<div class="grid-item"><input type="text" id="ida" placeholder="id" /></div>
+						<div class="grid-item"><input type="text" id="idb" placeholder="id" /></div>
 						
 						<div class="grid-item"><div id="displaya"></div></div>
 						<div class="grid-item"><div id="displayb"></div></div>
