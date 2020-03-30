@@ -92,8 +92,7 @@
 						<div class="grid-item"><input type="text" id="searche" placeholder="Add Player" /></div>
 						<div class="grid-item"><input type="text" id="searchf" placeholder="Add Player" /></div>
 						
-						<div class="grid-item"><input type="text" id="ida" placeholder="id" /></div>
-						<div class="grid-item"><input type="text" id="idb" placeholder="id" /></div>
+
 						
 						<div class="grid-item"><div id="displaya"></div></div>
 						<div class="grid-item"><div id="displayb"></div></div>
