@@ -35,7 +35,7 @@
 				font-weight: 900;
 				color: navy;
 			}
-
+      
 </style>
 
 
@@ -80,9 +80,8 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="admin_login.php">Login</a>
-                <a class="dropdown-item" href="#">Create Admin</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Log Out</a>
+                <a class="dropdown-item" href="logout.php">Log Out</a>
               </div>
             </li>
           </ul>
