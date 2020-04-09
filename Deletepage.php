@@ -3,6 +3,13 @@
     <title>Delete Players </title>
 </head>
     <body>
+          <h1> Delete Players </h1>
+
+        <section>
+            <button><a href="#"> </a>Admin Page</button>
+        </section>
+        
+        <br>
         <table border =1 cellpadding=1 cellspacing=1>
             <tr>
                 <th> Name </th> 
