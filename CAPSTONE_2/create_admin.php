@@ -77,7 +77,8 @@ global $link;
 				right: 0;
 			}
 </style>       
- <?php           
+ <?php  
+  
   $email = "";
   $a_password = "";
   $fname = "";
@@ -129,7 +130,7 @@ global $link;
 			. mysqli_error($link);
             return false;
         }
-}			
+}  			
 ?>
 <div style="text-align: center">
 <form class="signin" method="post" >
@@ -145,5 +146,6 @@ global $link;
     <input type="integer" name="last_SSN" id="searchOne" class="grid-item" placeholder="Last 4 of SSN" required><br>
     <button class="button" type="submit"><span>Register</span></button>
     <br />
+	<a href='admin.php' class="list-group-item list-group-item-action bg-light"><strong>Admin Home Page</strong></a>
 </form>
 </div>
