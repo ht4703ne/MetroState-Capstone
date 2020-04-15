@@ -10,3 +10,4 @@ if ($link ===false){
     die("ERROR: Could not connect. " . mysql_connect_error());
 }
 ?>
+
