@@ -51,6 +51,9 @@
       <div class="list-group list-group-flush">
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Top Players</a>
+        <a href="AddFile.php" class="list-group-item list-group-item-action bg-light">Add File</a>
+        <a href="AddPlayer.php" class="list-group-item list-group-item-action bg-light">Add Player</a>
+
         
       </div>
     </div>
@@ -71,9 +74,11 @@
             <li class="nav-item active">
               <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
+           
             <li class="nav-item">
               <a class="nav-link" href="https://sleeper.app" target="_blank">Sleeper</a>
             </li>
+         
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Admin
