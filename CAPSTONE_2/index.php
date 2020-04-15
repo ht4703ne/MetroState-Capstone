@@ -109,19 +109,6 @@
       <div class="list-group list-group-flush">
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="#" class="list-group-item list-group-item-action bg-light">Top Players</a>
-		<ulclass="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Edit Players
-              </a>
-			  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-		<a href="AddFile.php" class="list-group-item list-group-item-action bg-light">Add File</a>
-        <a href="AddPlayer.php" class="list-group-item list-group-item-action bg-light">Add Player</a>
-		<a href="UpdatePlayer.php" class="list-group-item list-group-item-action bg-light">Update Player</a>
-		<a href="DeletePlayer.html" class="list-group-item list-group-item-action bg-light">Delete Player</a>
-
-			</div>
-			</ul>
         
       </div>
     </div>
