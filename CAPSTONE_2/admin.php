@@ -79,7 +79,7 @@ session_start();
 <div class= "button-center">
 <h2><a href="create_admin.php" class="grid-item"><button class="button"><span>Create Admin Account</span></h2>
 <h2><a href="delete_admin.php" class="grid-item"><button class="button"><span>Delete Admin Account</span></h2>
-<h2><a href="#" class="grid-item"><button class="button"><span>Add/Delete Player</span></h2>
+<h2><a href="Deletepage.php" class="grid-item"><button class="button"><span>Add/Delete Player</span></h2>
 <h2><a href="logout.php" class="grid-item"><button class="button"><span>Logout</span></h2>
 </div>
 
