@@ -4,24 +4,17 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <meta name="description" content="">
   <meta name="author" content="">
 
   <title>fantAlytics</title>
 
-  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	
-	 <!-- Including jQuery is required. -->
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-   <!-- Including our scripting file. -->
-   <script type="text/javascript" src="scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles_custom.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
 
 </head>
 
@@ -31,11 +24,11 @@
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading"><b>fantAlytics</b></div>
+      <div class="sidebar-heading" style="color:#000080"><b>fantAlytics</b></div>
       <div class="list-group list-group-flush">
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="pendingFunction.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
-        
+        <a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
+
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -73,28 +66,52 @@
         </div>
       </nav>
 
-				
       <div class="container-fluid">
-        
-				
-				
-					<br>					
-						<div class="grid-container">
-						<div class="grid-item"><h1 class="mt-4" align="left" style="color:#000080"><b>fantAlytics</b></h1><h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3></div>
-						<div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>		
-					
-						<div class="grid-item" style="color:#000080"><h2>Team A</h2></div>
-						<div class="grid-item" style="color:#000080"><h2>Team B</h2></div>
-						<div class="grid-item"><input type="text" id="searcha" placeholder="Add Player" /></div>  
-						<div class="grid-item"><input type="text" id="searchb" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchc" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchd" placeholder="Add Player" /></div>  
-						<div class="grid-item"><input type="text" id="searche" placeholder="Add Player" /></div>
-						<div class="grid-item"><input type="text" id="searchf" placeholder="Add Player" /></div>
-						<div class="grid-item"><div id="displaya"></div></div>
-						<div class="grid-item"><div id="displayb"></div></div>
-						
-						</div>
+
+        <br>
+        <div class="grid-container">
+
+          <div class="grid-item">
+            <h1 class="mt-4" align="left" style="color:#000080"><b>fantAlytics</b></h1>
+            <h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3>
+          </div>
+          <div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>
+
+          <div class="grid-item" style="color:#000080">
+            <h2>Team A</h2>
+          </div>
+          <div class="grid-item" style="color:#000080">
+            <h2>Team B</h2>
+          </div>
+          </div>
+
+
+          <div class="grid-container2">
+            <div class="grid-item"><input type="text" id="searcha" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_a_search_a" placeholder="" readonly></div>
+            <div class="grid-item"><input type="text" id="searchb" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_b_search_a" placeholder="" readonly></div>
+            <div class="grid-item"><input type="text" id="searchc" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_a_search_b" placeholder="" readonly></div>
+            <div class="grid-item"><input type="text" id="searchd" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_b_search_b" placeholder="" readonly></div>
+            <div class="grid-item"><input type="text" id="searche" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_a_search_c" placeholder="" readonly></div>
+            <div class="grid-item"><input type="text" id="searchf" placeholder="Add Player"></div>
+            <div class="grid-item"><input type="text" id="stat_team_b_search_c" placeholder="" readonly></div>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <div id="displaya"></div>
+            </div>
+            <div class="grid-item">
+              <div id="displayb"></div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
     <!-- /#page-content-wrapper -->
@@ -112,12 +129,8 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-		
-		// place holder alert for winner of the trade after Analyze button is clicked
-		function analyze() {
-			alert("Team A is the Winner!");
-		}
-		
+
+
   </script>
 
 </body>
