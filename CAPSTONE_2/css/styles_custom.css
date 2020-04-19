@@ -1,8 +1,48 @@
-#searcha {
-    border-radius: 25px;
-    border: 2px solid navy;
+#team_a_player {
+    border-radius: 10px;
     padding: 20px;
-    width: 425px;
+    width: 475px;
+    height: 40px;
+    font-weight: 900;
+    color: navy;
+    text-align: center;
+}
+
+#team_b_player {
+    border-radius: 10px;
+    padding: 20px;
+    width: 475px;
+    height: 40px;
+    font-weight: 900;
+    color: navy;
+    text-align: center;
+}
+
+#team_a_stat {
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    height: 40px;
+    font-weight: 900;
+    color: navy;
+    text-align: center;
+}
+
+#team_b_stat {
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    height: 40px;
+    font-weight: 900;
+    color: navy;
+    text-align: center;
+}
+
+#searcha {
+    border-radius: 10px;
+    border: 3px solid navy;
+    padding: 20px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -10,10 +50,10 @@
 }
 
 #searchb {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
-    width: 425px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -21,10 +61,10 @@
 }
 
 #searchc {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
-    width: 425px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -32,10 +72,10 @@
 }
 
 #searchd {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
-    width: 425px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -43,10 +83,10 @@
 }
 
 #searche {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
-    width: 425px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -54,10 +94,10 @@
 }
 
 #searchf {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
-    width: 425px;
+    width: 475px;
     height: 10px;
     outline: none;
     font-weight: 900;
@@ -65,8 +105,8 @@
 }
 
 #stat_team_a_search_a {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -77,8 +117,8 @@
 }
 
 #stat_team_b_search_a {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -89,8 +129,8 @@
 }
 
 #stat_team_a_search_b {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -101,8 +141,8 @@
 }
 
 #stat_team_b_search_b {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -113,8 +153,8 @@
 }
 
 #stat_team_a_search_c {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -125,8 +165,8 @@
 }
 
 #stat_team_b_search_c {
-    border-radius: 25px;
-    border: 2px solid navy;
+    border-radius: 10px;
+    border: 3px solid navy;
     padding: 20px;
     width: 150px;
     height: 10px;
@@ -160,6 +200,7 @@
     padding: 10px;
     font-size: 30px;
     text-align: center;
+    color: #000080;
 }
 
 .button {
@@ -200,4 +241,43 @@
 .button:hover span:after {
     opacity: 1;
     right: 0;
+}
+
+#players {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#players td,
+#players th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#players tr:hover {
+    background-color: #ddd;
+}
+
+#players th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #000080;
+    color: white;
+    width: auto;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 75px;
+    margin: auto;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

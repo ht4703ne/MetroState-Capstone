@@ -77,44 +77,57 @@
           </div>
           <div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>
 
-          <div class="grid-item" style="color:#000080">
-            <h2>Team A</h2>
+          <div class="grid-item" style="color:#000080" >
+            <h1>Team A</h1>
           </div>
           <div class="grid-item" style="color:#000080">
-            <h2>Team B</h2>
-          </div>
-          </div>
-
-
-          <div class="grid-container2">
-            <div class="grid-item"><input type="text" id="searcha" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_a_search_a" placeholder="" readonly></div>
-            <div class="grid-item"><input type="text" id="searchb" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_b_search_a" placeholder="" readonly></div>
-            <div class="grid-item"><input type="text" id="searchc" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_a_search_b" placeholder="" readonly></div>
-            <div class="grid-item"><input type="text" id="searchd" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_b_search_b" placeholder="" readonly></div>
-            <div class="grid-item"><input type="text" id="searche" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_a_search_c" placeholder="" readonly></div>
-            <div class="grid-item"><input type="text" id="searchf" placeholder="Add Player"></div>
-            <div class="grid-item"><input type="text" id="stat_team_b_search_c" placeholder="" readonly></div>
-          </div>
-
-          <div class="grid-container">
-            <div class="grid-item">
-              <div id="displaya"></div>
-            </div>
-            <div class="grid-item">
-              <div id="displayb"></div>
-            </div>
-
+            <h1>Team B</h1>
           </div>
         </div>
 
+        <div class="grid-container2">
+
+          <div class="grid-item">
+            <h3 id="team_a_player">Player Name</h3>
+          </div>
+          <div class="grid-item">
+            <h3 id="team_a_stat">fantAlytics</h3>
+          </div>
+          <div class="grid-item">
+            <h3 id="team_b_player">Player Name</h3>
+          </div>
+          <div class="grid-item">
+            <h3 id="team_b_stat">fantAlytics</h3>
+          </div>
+
+          <div class="grid-item"><input type="text" id="searcha" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_a_search_a" placeholder="" readonly></div>
+          <div class="grid-item"><input type="text" id="searchb" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_b_search_a" placeholder="" readonly></div>
+          <div class="grid-item"><input type="text" id="searchc" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_a_search_b" placeholder="" readonly></div>
+          <div class="grid-item"><input type="text" id="searchd" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_b_search_b" placeholder="" readonly></div>
+          <div class="grid-item"><input type="text" id="searche" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_a_search_c" placeholder="" readonly></div>
+          <div class="grid-item"><input type="text" id="searchf" placeholder="Add Player"></div>
+          <div class="grid-item"><input type="text" id="stat_team_b_search_c" placeholder="" readonly></div>
+        </div>
+
+        <div class="grid-container">
+          <div class="grid-item">
+            <div id="displaya"></div>
+          </div>
+          <div class="grid-item">
+            <div id="displayb"></div>
+          </div>
+
+        </div>
       </div>
+
     </div>
-    <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#page-content-wrapper -->
 
   </div>
   <!-- /#wrapper -->
@@ -129,8 +142,6 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-
-
   </script>
 
 </body>

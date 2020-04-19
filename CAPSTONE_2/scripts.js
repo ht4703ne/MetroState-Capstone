@@ -382,7 +382,3 @@ function analyze() {
 
 
 }
-
-/*document.getElementById("demo").innerHTML = analysis;
-save for possible use in a div
-*/

@@ -10,61 +10,22 @@
 
 	<title>fantAlytics</title>
 
-	<!-- Bootstrap core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- Custom styles for this template -->
 	<link href="css/simple-sidebar.css" rel="stylesheet">
-
 	<link rel="stylesheet" type="text/css" href="css/styles_custom.css">
-
-	<!-- Including jQuery is required. -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<!-- Including our scripting file. -->
 	<script type="text/javascript" src="scripts.js"></script>
 
-
 	<style>
-		#players {
-			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-			border-collapse: collapse;
-			width: 100%;
-		}
-
-		#players td,
-		#players th {
-			border: 1px solid #ddd;
-			padding: 8px;
-		}
-
-
-		#players tr:hover {
-			background-color: #ddd;
-		}
-
-		#players th {
-			padding-top: 12px;
-			padding-bottom: 12px;
-			text-align: left;
-			background-color: #000080;
-			color: white;
-			width: auto;
-		}
-
-		/* Create two equal columns that floats next to each other */
-		.column {
-			float: left;
-			width: 50%;
-			padding: 10px;
-			height: 75px;
-			margin: auto;
-		}
-
-		/* Clear floats after the columns */
-		.row:after {
-			content: "";
-			display: table;
-			clear: both;
+		#posSelect {
+			border-radius: 10px;
+			border: 3px solid navy;
+			font-size: 20px;
+			height: 60px;
+			width: 100px;
+			color: navy;
+			font-weight: bold;
+			text-align: center;
 		}
 	</style>
 
@@ -118,29 +79,29 @@
 				</div>
 			</nav>
 
-
 			<div class="row">
 				<div class="column">
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Top Players</h1>
 				</div>
 				<div class="column" align="right">
-					<select id="posSelect" onchange="TopPlayerFilter()" style="color:#000080;font-size:40px; font-weight: bold;">
-						<option selected value="selectStuff" style="color:#000080;font-size:40px; font-weight: bold;">-select-</option>
-						<option value="qb" style="color:#000080;font-size:40px; font-weight: bold;">QB</option>
-						<option value="wr" style="color:#000080;font-size:40px; font-weight: bold;">WR</option>
-						<option value="rb" style="color:#000080;font-size:40px; font-weight: bold;">RB</option>
-						<option value="te" style="color:#000080;font-size:40px; font-weight: bold;">TE</option>
-						<option value="dst" style="color:#000080;font-size:40px; font-weight: bold;">D/ST</option>
+					<select id="posSelect" onchange="TopPlayerFilter()">
+
+						<option selected value="select">-select-</option>
+						<option value="qb">QB</option>
+						<option value="wr">WR</option>
+						<option value="rb">RB</option>
+						<option value="te">TE</option>
+						<option value="dst">D/ST</option>
+
 					</select><br><br>
 				</div>
 			</div>
 
-
 			<script>
 				function TopPlayerFilter() {
 					var input, filter, table, tr, td, i, txtValue;
-					input = document.getElementById("posSelect");
-					filter = input.value.toUpperCase();
+					position = document.getElementById("posSelect");
+					filter = position.value.toUpperCase();
 					table = document.getElementById("players");
 					tr = table.getElementsByTagName("tr");
 					for (i = 0; i < tr.length; i++) {
@@ -188,36 +149,77 @@
 				( def_int * 2 ) + ( forced_fumble * 0 ) + 
 				( fumble_recovery * 2 ) ,2)
 
-				AS 'FP_TOTAL' 
+				AS 'FP_TOTAL',
 
-				# fantAlytics Algorithm
-				ROUND(( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
+				#FANTALYTICS
+
+				CASE 
+
+				WHEN pos='TE' THEN
+
+					ROUND((( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
+					( passing_int * -2 ) + ( rushing_yds * 0.1 ) + 
+					( rushing_td * 7 ) + ( receiving_rec * 1.2 ) + 
+					( receiving_yds * 0.15 ) + ( receiving_td * 7 ) +				
+					( fum_lst * -2 ) + ( def_sack * 1 ) + 
+					( def_int * 2 ) + ( forced_fumble * 0 ) + 
+					( fumble_recovery * 2 ) ) / 16,2)
+
+				WHEN pos='RB' THEN
+
+					ROUND((( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
+					( passing_int * -2 ) + ( rushing_yds * 0.1 ) + 
+					( rushing_td * 6 ) + ( receiving_rec * 1.2 ) + 
+					( receiving_yds * 0.12 ) + ( receiving_td * 7 ) +				
+					( fum_lst * -2.5 ) + ( def_sack * 1 ) + 
+					( def_int * 2 ) + ( forced_fumble * 0 ) + 
+					( fumble_recovery * 2 ) ) / 16,2)
+
+				WHEN pos='WR' THEN
+
+					ROUND((( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
+					( passing_int * -2 ) + ( rushing_yds * 0.1 ) + 
+					( rushing_td * 6 ) + ( receiving_rec * 0.8 ) + 
+					( receiving_yds * 0.05 ) + ( receiving_td * 6 ) +				
+					( fum_lst * -2 ) + ( def_sack * 1 ) + 
+					( def_int * 2 ) + ( forced_fumble * 0 ) + 
+					( fumble_recovery * 2 ) ) / 16,2)
+
+				WHEN pos='QB' THEN
+
+					ROUND((( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
+					( passing_int * -3 ) + ( rushing_yds * 0.2 ) + 
+					( rushing_td * 7.5 ) + ( receiving_rec * 1 ) + 
+					( receiving_yds * 0.1 ) + ( receiving_td * 6 ) +				
+					( fum_lst * -3 ) + ( def_sack * 1 ) + 
+					( def_int * 2 ) + ( forced_fumble * 0 ) + 
+					( fumble_recovery * 2 ) ) / 16,2)
+
+				ELSE 
+
+				ROUND((( passing_yds * 0.04 ) + ( passing_td * 4 ) + 
 				( passing_int * -2 ) + ( rushing_yds * 0.1 ) + 
 				( rushing_td * 6 ) + ( receiving_rec * 1 ) + 
 				( receiving_yds * 0.1 ) + ( receiving_td * 6 ) +				
 				( fum_lst * -2 ) + ( def_sack * 1 ) + 
 				( def_int * 2 ) + ( forced_fumble * 0 ) + 
-				( fumble_recovery * 2 ) ,2)
+				( fumble_recovery * 2 ) ) / gms,2)
 
-				AS 'FANTALYTICS' 
-
-
+				END AS 'FANTALYTICS'
 
 				FROM main
-				ORDER BY FP_TOTAL DESC;");
-
+				ORDER BY FANTALYTICS DESC;");
 
 			echo "<table id='players'>
 				<tr class='header'>
-				<th style='width:16.67%';>Name</th>
-				<th style='width:16.67%';>Team</th>
-				<th style='width:16.67%';>Position</th>
-				<th style='width:16.67%';>Games Played (2019)</th>
-				<th style='width:16.67%';>Avg Fantasy Points per Game</th>
-				<th style='width:16.67%';>Total Fantasy Points</th>
-
+				<th style='width:14.3%';>Name</th>
+				<th style='width:14.3%';>Team</th>
+				<th style='width:14.3%';>Position</th>
+				<th style='width:14.3%';>Games Played (2019)</th>
+				<th style='width:14.3%';>Avg Fantasy Points per Game</th>
+				<th style='width:14.3%';>Total Fantasy Points</th>
+				<th style='width:14.3%';>fantAlytics Score</th>
 				</tr>";
-
 
 			while ($row = mysqli_fetch_array($result)) {
 				echo "<tr>";
@@ -227,6 +229,7 @@
 				echo "<td>" . $row['gms'] . "</td>";
 				echo "<td>" . $row['FP_PG'] . "</td>";
 				echo "<td>" . $row['FP_TOTAL'] . "</td>";
+				echo "<td>" . $row['FANTALYTICS'] . "</td>";
 				echo "</tr>";
 			}
 			echo "</table>";
@@ -234,7 +237,6 @@
 			mysqli_close($con);
 
 			?>
-
 
 </body>
 
