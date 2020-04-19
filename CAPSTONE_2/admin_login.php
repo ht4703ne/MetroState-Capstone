@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     mysqli_stmt_bind_result($stmt, $email, $a_password);
                     if(mysqli_stmt_fetch($stmt)){
-                       if((trim($a_password) == trim($a_password))){
+                       if((trim($a_password) == trim($_POST["a_password"]))){
                            echo $email." ".$a_password;
                            session_start();
                             $_SESSION["loggedin"] = true;
@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" name="email" id="searchOne" class="email" placeholder="Email address" required autofocus><br />
       <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password"  name="a_password" id="searchOne" class="a_password" placeholder="Password" required>
+      <input type="password" name="a_password" id="searchOne" class="a_password" placeholder="Password" required>
       <div style="white-space:nowrap" class="checkbox mb-3">
         <input type="checkbox" value="remember-me" id="inputRememberMe"/>
         <label for="inputRememberMe">Remember me</label>
