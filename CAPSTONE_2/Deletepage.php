@@ -6,7 +6,7 @@
         <h1> Delete Players </h1>
 
         <section>
-            <button><a href="#"> </a>Admin Page</button>
+            <button><a href="admin.php"> Admin Page</a></button>
         </section>
         
         <br>
@@ -18,7 +18,7 @@
             </tr>
             <?php
                 //connect
-                $con = mysqli_connect('localhost', 'root', 'admin');
+                $con = mysqli_connect('localhost', 'root', '');
 
                     mysqli_select_db($con, 'ffb_stats');
 
