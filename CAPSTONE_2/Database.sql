@@ -49,11 +49,11 @@ CREATE TABLE `dst` (
   `FUMBLE_RECOVERY` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE admin ( 
-admin_ID integer AUTO_INCREMENT PRIMARY KEY, fname VARCHAR(255) NOT NULL, lname VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, city VARCHAR(50) NOT NULL, state VARCHAR(2) NOT NULL, email VARCHAR(50) NOT NULL, last_SSN integer NOT NULL, a_password VARCHAR(50) NOT NULL
+CREATE TABLE user ( 
+user_ID integer AUTO_INCREMENT PRIMARY KEY, fname VARCHAR(255) NOT NULL, lname VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, city VARCHAR(50) NOT NULL, state VARCHAR(2) NOT NULL, email VARCHAR(50) NOT NULL, last_SSN integer NOT NULL, a_password VARCHAR(50) NOT NULL
 );
 
-INSERT INTO admin (fname, lname, address, city, state, email, last_SSN, a_password)
+INSERT INTO user (fname, lname, address, city, state, email, last_SSN, a_password)
 VALUES ('Mike', 'Toronto', '123 Main St', 'St Paul', 'MN', 'toronto864@gmail.com', 1111, '1234');
 
 --
