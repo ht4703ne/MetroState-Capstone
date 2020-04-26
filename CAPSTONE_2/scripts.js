@@ -345,6 +345,7 @@ $(document).ready(function() {
     });
 });
 
+// determine who the trade winner is and if it's a fair, risky, or unfair trade
 function analyze() {
 
     if (isNaN(parseFloat(stat_team_a_search_a.value)))
@@ -374,11 +375,18 @@ function analyze() {
     var team_a_total = stat_team_a_search_a_calc + stat_team_a_search_b_calc + stat_team_a_search_c_calc;
     var team_b_total = stat_team_b_search_a_calc + stat_team_b_search_b_calc + stat_team_b_search_c_calc;
 
-    if (team_a_total > team_b_total)
-        alert('Team A is the trade winner!');
-    else if (team_a_total < team_b_total)
-        alert('Team B is the trade winner');
-    else alert('The trade is a tie');
+    var absolute_delta = (Math.abs(team_a_total - team_b_total)).toFixed(2);
 
+    if (absolute_delta < 5)
+        var trade_balance = ' fair';
+    else if (absolute_delta > 5 && absolute_delta <= 10)
+        var trade_balance = ' risky';
+    else var trade_balance = 'n unfair';
+
+    if (team_a_total > team_b_total)
+        alert('Team A is the trade winner by a margin of +' + absolute_delta + ' fantAlytic points. This is a' + trade_balance + ' trade to make.');
+    else if (team_a_total < team_b_total)
+        alert('Team B is the trade winner by a margin of +' + absolute_delta + ' fantAlytic points. This is a' + trade_balance + ' trade to make.');
+    else alert('The trade is a tie');
 
 }
