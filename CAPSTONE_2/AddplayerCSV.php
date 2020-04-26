@@ -14,10 +14,28 @@ if(isset($_POST["upload"]))
    $handle = fopen($_FILES['Player_file']['tmp_name'], "r");
    while($data = fgetcsv($handle))
    {
-    $ID_PK= mysqli_real_escape_string($connect, $data[0]);
-    $Name = mysqli_real_escape_string($connect, $data[1]);
+    $id_pk= mysqli_real_escape_string($connect, $data[0]);
+    $name = mysqli_real_escape_string($connect, $data[1]);
+    $team = mysqli_real_escape_string($connect, $data[2]);
+    $pos = mysqli_real_escape_string($connect, $data[3]);
+    $gms = mysqli_real_escape_string($connect, $data[4]);
+    $passing_yds = mysqli_real_escape_string($connect, $data[5]);
+    $passing_td = mysqli_real_escape_string($connect, $data[6]);
+    $passing_int = mysqli_real_escape_string($connect, $data[7]);
+    $rushing_yds = mysqli_real_escape_string($connect, $data[8]);
+    $rushing_td = mysqli_real_escape_string($connect, $data[9]);
+    $receiving_rec = mysqli_real_escape_string($connect, $data[10]);
+    $receiving_yds = mysqli_real_escape_string($connect, $data[11]);
+    $receiving_td = mysqli_real_escape_string($connect, $data[12]);
+    $fum_lst = mysqli_real_escape_string($connect, $data[13]);
+    $def_sack = mysqli_real_escape_string($connect, $data[14]);
+    $def_int = mysqli_real_escape_string($connect, $data[15]);
+    $forced_fumble = mysqli_real_escape_string($connect, $data[16]);
+    $fumble_recovery = mysqli_real_escape_string($connect, $data[17]);
+    
     if($ID_PK >0){
-        $query = ("INSERT INTO  main (ID_PK,NAME 
+        $query = ("INSERT INTO  main (ID_PK
+        ,NAME 
         ,TEAM 
         ,POS 
         ,GMS
@@ -33,7 +51,8 @@ if(isset($_POST["upload"]))
         ,DEF_SACK
         ,DEF_INT 
         ,FORCED_FUMBLE 
-        ,FUMBLE_RECOVERY) VALUES ('$id_pk','$name' 
+        ,FUMBLE_RECOVERY) VALUES ('$id_pk'
+        ,'$name' 
         ,'$team' 
         ,'$pos'
         ,'$gms'

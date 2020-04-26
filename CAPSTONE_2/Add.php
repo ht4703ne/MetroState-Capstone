@@ -25,7 +25,8 @@
 
     if($name !=''||$team !=''){
         //Insert Query of SQL
-        $query = ("INSERT INTO  main (ID_PK,NAME 
+        $query = ("INSERT INTO  main (ID_PK
+        ,NAME 
         ,TEAM 
         ,POS 
         ,GMS
@@ -41,7 +42,8 @@
         ,DEF_SACK
         ,DEF_INT 
         ,FORCED_FUMBLE 
-        ,FUMBLE_RECOVERY) VALUES ('$id_pk','$name' 
+        ,FUMBLE_RECOVERY) VALUES ('$id_pk'
+        ,'$name' 
         ,'$team' 
         ,'$pos'
         ,'$gms'
@@ -58,7 +60,8 @@
         ,'$def_int' 
         ,'$forced_fumble'
         ,'$fumble_recovery')");
-        echo "<td><a href=admin.php?href=AddPlayer.php>Player Added  </a></td>";
+    mysqli_query($connection, $query);
+    echo "<td><a href=admin.php?href=AddPlayer.php>Player Added  </a></td>";
     }
     else{
     echo "<p>Insertion Failed <br/> Some Fields are Blank....!!</p>";

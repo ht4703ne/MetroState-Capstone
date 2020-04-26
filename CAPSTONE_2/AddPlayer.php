@@ -45,7 +45,7 @@
                     <label>Rushing_td:</label>
                     <input class="input" name="rushing_td" type="int" value="">
                     <label>Receiving_rec:</label>
-                    <input class="input" name="  receiving_rec" type="int" value="">
+                    <input class="input" name="receiving_rec" type="int" value="">
                     <label>Receiving_yds:</label>
                     <input class="input" name="receiving_yds" type="int" value="">
                     <label>Receiving_td:</label>
