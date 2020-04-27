@@ -480,3 +480,25 @@ if (isset($_POST['searchf'])) {
 }
 ?>
 </ul>
+
+<?php
+include "db.php";
+if (isset($_POST['delete_player_a'])) {
+   $name = $_POST['delete_player_a'];
+   $Query = "SELECT name FROM main WHERE name LIKE '%$name%' LIMIT 5";
+
+   $ExecQuery = MySQLi_query($con, $Query);
+   echo '
+<ul>
+   ';
+   while ($Result = MySQLi_fetch_array($ExecQuery)) {
+?>
+      <li style="list-style-type:none" onclick='fill_delete_player("<?php echo $Result['name'] ?>") '>
+         <a>
+            <?php echo $Result['name'] ?>
+      </li></a>
+
+<?php
+   }
+}
+?>

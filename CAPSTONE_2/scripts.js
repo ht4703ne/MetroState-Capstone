@@ -390,3 +390,31 @@ function analyze() {
     else alert('The trade is a tie');
 
 }
+
+
+
+function fill_delete_player(Value) {
+    $('#delete_player_a').val(Value);
+    $('#display_delete').hide();
+}
+
+$(document).ready(function() {
+    $("#delete_player_a").keyup(function() {
+        var name = $('#delete_player_a').val();
+        if (name == "") {
+            $("#display_delete").html("");
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "ajax.php",
+                data: {
+                    delete_player_a: name
+                },
+                success: function(html) {
+
+                    $("#display_delete").html(html).show();
+                }
+            });
+        }
+    });
+});
