@@ -23,13 +23,13 @@
 		#player_select {
 			border-radius: 10px;
 			border: 3px solid navy;
-			font-size: 50px;
+			font-size: 25px;
 			height: 60px;
 			width: 400px;
-			color: navy;
+			color: gray;
 			font-weight: bold;
 			text-align: center;
-			float: right;
+
 		}
 	</style>
 
@@ -83,13 +83,13 @@
 				</div>
 			</nav>
 
-			<div class="row">
+			<div>
 
-				<div class="column">
+				<div>
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Delete Players</h1>
 				</div>
 
-				<div class="column" align="right">
+				<div>
 					<input type="text" id="player_select" placeholder="Search" onchange="playerFilter()">
 				</div>
 
@@ -98,7 +98,7 @@
 			<?php
 
 			$con = mysqli_connect("localhost", "root", "", "ffb_stats");
-			// Check connection
+
 			if (mysqli_connect_errno()) {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}

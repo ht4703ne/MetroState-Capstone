@@ -25,10 +25,11 @@
 			border: 3px solid navy;
 			font-size: 20px;
 			height: 60px;
-			width: 100px;
+			width: 280px;
 			color: navy;
 			font-weight: bold;
 			text-align: center;
+
 		}
 	</style>
 
@@ -81,22 +82,25 @@
 				</div>
 			</nav>
 
-			<div class="row">
-				<div class="column">
+			<div>
+
+				<div>
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Top Players</h1>
 				</div>
-				<div class="column" align="right">
+				<div>
+
 					<select id="posSelect" onchange="TopPlayerFilter()">
 
 						<option selected value="select" disabled selected>-select-</option>
-						<option value="qb">QB</option>
-						<option value="wr">WR</option>
-						<option value="rb">RB</option>
-						<option value="te">TE</option>
-						<option value="dst">D/ST</option>
+						<option value="qb">Quarterback</option>
+						<option value="wr">Wide Receiver</option>
+						<option value="rb">Running Back</option>
+						<option value="te">Tight End</option>
+						<option value="dst">Defense/Special Teams</option>
 
-					</select><br><br>
+					</select>
 				</div>
+
 			</div>
 
 			<?php

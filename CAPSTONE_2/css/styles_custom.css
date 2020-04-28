@@ -268,15 +268,9 @@
     width: auto;
 }
 
-.column {
-    height: 75px;
-    text-align: right;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+#pleaseWork {
+    float: left;
+    width: 1000px;
 }
 
 .button2 {
