@@ -74,7 +74,7 @@
         <div class="grid-container">
 
           <div class="grid-item">
-            <h1 class="mt-4" align="left" style="color:#000080"><b>fantAlytics</b></h1>
+            <h1 class="mt-4" align="left" style="color:#000080 ; font-size:75px;"><b>fantAlytics</b></h1>
             <h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3>
           </div>
           <div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>
