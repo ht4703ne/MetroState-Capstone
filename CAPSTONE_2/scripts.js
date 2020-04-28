@@ -1,4 +1,4 @@
-// Team A - Box 1
+// Team A - Search Box - #1
 function fill1(Value) {
     $('#searcha').val(Value);
     $('#displaya').hide();
@@ -25,8 +25,7 @@ $(document).ready(function() {
     });
 });
 
-
-// Team B - Box 1
+// Team B - Search Box - #1
 function fill2(Value) {
     $('#searchb').val(Value);
     $('#displayb').hide();
@@ -54,8 +53,7 @@ $(document).ready(function() {
     });
 });
 
-
-// Team A - Box 2
+// Team A - Search Box - #2
 function fill3(Value) {
     $('#searchc').val(Value);
     $('#displaya').hide();
@@ -83,9 +81,7 @@ $(document).ready(function() {
     });
 });
 
-
-
-// Team B - Box 2
+// Team B - Search Box - #2
 function fill4(Value) {
     $('#searchd').val(Value);
     $('#displayb').hide();
@@ -113,8 +109,7 @@ $(document).ready(function() {
     });
 });
 
-
-// Team A - Box 3
+// Team A - Search Box - #3
 function fill5(Value) {
     $('#searche').val(Value);
     $('#displaya').hide();
@@ -142,9 +137,7 @@ $(document).ready(function() {
     });
 });
 
-
-
-// Team B - Box 3
+// Team B - Search Box - #6
 function fill6(Value) {
     $('#searchf').val(Value);
     $('#displayb').hide();
@@ -172,13 +165,7 @@ $(document).ready(function() {
     });
 });
 
-
-
-
-
-
-
-// stat team a - search a
+// Team A - Stat Box - #1
 function fillscore_a(Value) {
     $('#stat_team_a_search_a').val(Value);
     $('#displaya').hide();
@@ -206,7 +193,7 @@ $(document).ready(function() {
 });
 
 
-// stat team b - search b
+// Team B - Stat Box - #1
 function fillscore_b(Value) {
     $('#stat_team_b_search_a').val(Value);
     $('#displayb').hide();
@@ -234,7 +221,7 @@ $(document).ready(function() {
 });
 
 
-// stat team a - search c
+// Team A - Stat Box - #2
 function fillscore_c(Value) {
     $('#stat_team_a_search_b').val(Value);
     $('#displaya').hide();
@@ -263,7 +250,7 @@ $(document).ready(function() {
 
 
 
-// stat team b - search d
+// Team B - Stat Box - #2
 function fillscore_d(Value) {
     $('#stat_team_b_search_b').val(Value);
     $('#displayb').hide();
@@ -290,7 +277,7 @@ $(document).ready(function() {
     });
 });
 
-// stat team a - search e
+// Team A - Stat Box - #3
 function fillscore_e(Value) {
     $('#stat_team_a_search_c').val(Value);
     $('#displaya').hide();
@@ -318,7 +305,7 @@ $(document).ready(function() {
 });
 
 
-// stat team b - search f
+// Team B - Stat Box - #3
 function fillscore_f(Value) {
     $('#stat_team_b_search_c').val(Value);
     $('#displayb').hide();
@@ -345,7 +332,7 @@ $(document).ready(function() {
     });
 });
 
-// determine who the trade winner is and if it's a fair, risky, or unfair trade
+// function analyze() determines; 1) who the trade winner is, 2) is it a fair, risky, or unfair trade
 function analyze() {
 
     if (isNaN(parseFloat(stat_team_a_search_a.value)))
@@ -391,8 +378,7 @@ function analyze() {
 
 }
 
-
-
+// search for player to delete
 function fill_delete_player(Value) {
     $('#delete_player_a').val(Value);
     $('#display_delete').hide();

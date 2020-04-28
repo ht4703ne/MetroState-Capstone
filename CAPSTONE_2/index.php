@@ -15,6 +15,8 @@
   <link rel="stylesheet" type="text/css" href="css/styles_custom.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript" src="scripts.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
 
@@ -77,7 +79,7 @@
           </div>
           <div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>
 
-          <div class="grid-item" style="color:#000080" >
+          <div class="grid-item" style="color:#000080">
             <h1>Team A</h1>
           </div>
           <div class="grid-item" style="color:#000080">
@@ -127,23 +129,15 @@
 
     </div>
   </div>
-  <!-- /#page-content-wrapper -->
-
   </div>
-  <!-- /#wrapper -->
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
 
 </body>
 
 </html>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

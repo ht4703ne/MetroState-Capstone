@@ -44,7 +44,6 @@
 			<div class="list-group list-group-flush">
 				<a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
 				<a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
-
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -89,7 +88,7 @@
 				<div class="column" align="right">
 					<select id="posSelect" onchange="TopPlayerFilter()">
 
-						<option selected value="select">-select-</option>
+						<option selected value="select" disabled selected>-select-</option>
 						<option value="qb">QB</option>
 						<option value="wr">WR</option>
 						<option value="rb">RB</option>
@@ -99,27 +98,6 @@
 					</select><br><br>
 				</div>
 			</div>
-
-			<script>
-				function TopPlayerFilter() {
-					var input, filter, table, tr, td, i, txtValue;
-					position = document.getElementById("posSelect");
-					filter = position.value.toUpperCase();
-					table = document.getElementById("players");
-					tr = table.getElementsByTagName("tr");
-					for (i = 0; i < tr.length; i++) {
-						td = tr[i].getElementsByTagName("td")[2];
-						if (td) {
-							txtValue = td.textContent || td.innerText;
-							if (txtValue.toUpperCase().indexOf(filter) > -1) {
-								tr[i].style.display = "";
-							} else {
-								tr[i].style.display = "none";
-							}
-						}
-					}
-				}
-			</script>
 
 			<?php
 
@@ -240,7 +218,6 @@
 
 			?>
 
-
 			<script>
 				$("#menu-toggle").click(function(e) {
 					e.preventDefault();
@@ -251,3 +228,24 @@
 </body>
 
 </html>
+
+<script>
+	function TopPlayerFilter() {
+		var input, filter, table, tr, td, i, txtValue;
+		position = document.getElementById("posSelect");
+		filter = position.value.toUpperCase();
+		table = document.getElementById("players");
+		tr = table.getElementsByTagName("tr");
+		for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[2];
+			if (td) {
+				txtValue = td.textContent || td.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "none";
+				}
+			}
+		}
+	}
+</script>

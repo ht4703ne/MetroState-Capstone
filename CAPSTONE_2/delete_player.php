@@ -20,15 +20,16 @@
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<style>
-		#posSelect {
+		#player_select {
 			border-radius: 10px;
 			border: 3px solid navy;
-			font-size: 20px;
+			font-size: 50px;
 			height: 60px;
-			width: 100px;
+			width: 400px;
 			color: navy;
 			font-weight: bold;
 			text-align: center;
+			float: right;
 		}
 	</style>
 
@@ -83,17 +84,16 @@
 			</nav>
 
 			<div class="row">
+
 				<div class="column">
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Delete Players</h1>
 				</div>
+
 				<div class="column" align="right">
-
+					<input type="text" id="player_select" placeholder="Search" onchange="playerFilter()">
 				</div>
+
 			</div>
-
-			<script>
-
-			</script>
 
 			<?php
 
@@ -107,8 +107,8 @@
 
 			echo "<table id='players'>
 				<tr class='header'>
-				<th style='width:20%';>ID</th>
-				<th style='width:20%';>Name</th>
+				<th style='width:10%';>ID</th>
+				<th style='width:30%';>Name</th>
 				<th style='width:20%';>Team</th>
 				<th style='width:20%';>Pos</th>
 				<th style='width:20%';>Action</th>
@@ -121,7 +121,7 @@
 				echo "<td>" . $row['name'] . "</td>";
 				echo "<td>" . $row['team'] . "</td>";
 				echo "<td>" . $row['pos'] . "</td>";
-				echo "<td><button><a href='delete.php?id=" . $row['id_pk'] . " ' >Delete</a></button>
+				echo "<td><button><a onClick=\"javascript: return confirm('Are you sure you want to delete " . $row['name'] . " - " . $row['pos'] . " - " . $row['team'] . "?');\" href='delete.php?id=" . $row['id_pk'] . " ' >Delete</a></button>
 				
 				</td>";
 				echo "</tr>";
@@ -132,14 +132,32 @@
 
 			?>
 
-			<script>
-				$("#menu-toggle").click(function(e) {
-					e.preventDefault();
-					$("#wrapper").toggleClass("toggled");
-				});
-
-			</script>
-
 </body>
 
 </html>
+
+<script>
+	$("#menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("toggled");
+	});
+
+	function playerFilter() {
+		var input, filter, table, tr, td, i, txtValue;
+		position = document.getElementById("player_select");
+		filter = position.value.toUpperCase();
+		table = document.getElementById("players");
+		tr = table.getElementsByTagName("tr");
+		for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[1];
+			if (td) {
+				txtValue = td.textContent || td.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "none";
+				}
+			}
+		}
+	}
+</script>
