@@ -23,14 +23,15 @@ session_start();
 			
 			.button {
 				display: inline-block;
-				border-radius: 4px;
+				border-radius: 25px;
 				background-color: #000080;
 				border: none;
 				color: #FFFFFF;
 				text-align: center;
 				font-size: 28px;
-				padding: 20px;
-				width: 200px;
+				padding: 10px;
+				width: 400px;
+				height: 100px;
 				transition: all 0.5s;
 				cursor: pointer;
 				margin: 5px;
@@ -57,14 +58,16 @@ session_start();
 			}
 
 		.button:hover span:after {
-				opacity: 1;
+				opacity: 100;
 				right: 0;
     }
+
     .button-center {
       text-align: center;
       padding: 15px;
       margin: 15px;
     }
+
 </style>
 <head>
 

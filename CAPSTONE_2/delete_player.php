@@ -29,7 +29,6 @@
 			color: gray;
 			font-weight: bold;
 			text-align: center;
-
 		}
 	</style>
 
@@ -84,6 +83,8 @@
 			</nav>
 
 			<div>
+
+				<a href='admin.php' class="list-group-item list-group-item-action bg-light" style="text-align: center"><strong>Admin Home Page</strong></a>
 
 				<div>
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Delete Players</h1>
