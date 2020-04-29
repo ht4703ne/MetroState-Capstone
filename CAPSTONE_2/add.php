@@ -3,7 +3,7 @@
 $dbname = "ffb_stats";
 $con = mysqli_connect("localhost", "root", "", $dbname);
 if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
+	die("Connection failed: " . mysqli_connect_error());
 }
 
 // find max id_pk to assign it to new player created
@@ -11,12 +11,12 @@ $result = mysqli_query($con, $find_max_id_pk = "SELECT MAX(ID_PK) as max_id FROM
 
 while ($r = mysqli_fetch_array($result)) {
 
-    $max_id = $r['max_id'] + 1;
+	$max_id = $r['max_id'] + 1;
 }
 
 if (isset($_POST['name']) && $_POST['name'] != "" && isset($_POST['team']) && $_POST['team'] != "") {
 
-    $sql = "INSERT INTO main (id_pk, name, team, pos, gms, 
+	$sql = "INSERT INTO main (id_pk, name, team, pos, gms, 
 			passing_yds, passing_td, passing_int, rushing_yds, 
 			rushing_td, receiving_rec, receiving_yds, receiving_td, 
 			fum_lst, def_sack, def_int, forced_fumble, fumble_recovery)
@@ -38,15 +38,15 @@ if (isset($_POST['name']) && $_POST['name'] != "" && isset($_POST['team']) && $_
 			'$_POST[def_sack]', 
 			'$_POST[def_int]', 
 			'$_POST[forced_fumble]', 
-            '$_POST[fumble_recovery]' ) ";
+			'$_POST[fumble_recovery]' ) ";
 }
 
 if (mysqli_query($con, $sql)) {
-    header('Location: add_player.php');
-    exit;
+	header('Location: add_player.php');
+	exit;
 } else {
-    header('Location: add_player.php');
-    exit;
+	header('Location: add_player.php');
+	exit;
 }
 
 // Close connection

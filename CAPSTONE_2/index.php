@@ -62,9 +62,6 @@
     }
   </style>
 
-
-
-
 </head>
 
 <body>
@@ -128,6 +125,8 @@
 
           <div>
 
+
+            <!-- team a grid -->
             <div class="grid" style="background-color:#f2f2f2;">
 
               <div class="col-2-3">
@@ -156,7 +155,7 @@
 
           </div>
 
-
+          <!-- team b grid -->
           <div class="grid" style="background-color:#f2f2f2;">
 
             <div class="col-2-3">
@@ -183,19 +182,24 @@
             </div>
           </div>
 
+
+          <!-- player display grid -->
           <div class="col-1-2">
             <h5 style="text-align: center; color: black;"></h5>
             <div id="displaya" style="font-size:35px;"></div>
           </div>
           <div class="col-1-2">
-          <h5 style="text-align: center; color: black;"></h5>
+            <h5 style="text-align: center; color: black;"></h5>
             <div id="displayb" style="font-size:35px;"></div>
           </div>
 
         </div>
+
       </div>
     </div>
+
   </div>
+
   </div>
 
 </body>
