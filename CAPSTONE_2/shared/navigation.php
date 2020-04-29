@@ -49,7 +49,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"><b>fantAlytics</b></div>
       <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="index.php" class="list-group-item list-group-item-action bg-light">Analyzer</a>
         <a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
         
       </div>

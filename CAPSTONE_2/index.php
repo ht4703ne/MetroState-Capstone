@@ -72,7 +72,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading" style="color:#000080"><b>fantAlytics</b></div>
       <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="index.php" class="list-group-item list-group-item-action bg-light">Analyzer</a>
         <a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
 
       </div>
@@ -132,7 +132,7 @@
               <div class="col-2-3">
                 <form class="signin" id="add_admin_form" method="post">
                   <br>
-                  <h5 style="text-align: center; color:#000080;font-size:40px; font-weight: bold;">Player Name</h5>
+                  <h5 style="text-align: center; color:#000080;font-size:40px; font-weight: bold;">Team A - Receiving</h5>
                   <input type="text" id="searcha" class="grid-item" placeholder="Add Player" required autofocus><br>
                   <input type="text" id="searchc" class="grid-item" placeholder="Add Player" required><br>
                   <input type="text" id="searche" class="grid-item" placeholder="Add Player" required><br>
@@ -162,7 +162,7 @@
 
               <form class="signin" id="add_admin_form" method="post">
                 <br>
-                <h5 style="text-align: center; color:green;font-size:40px; font-weight: bold;">Team B</h5>
+                <h5 style="text-align: center; color:green;font-size:40px; font-weight: bold;">Team B - Receiving</h5>
                 <input type="text" id="searchb" class="grid-item" placeholder="Add Player" required autofocus><br>
                 <input type="text" id="searchd" class="grid-item" placeholder="Add Player" required><br>
                 <input type="text" id="searchf" class="grid-item" placeholder="Add Player" required><br>

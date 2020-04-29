@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<br>
 		<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 20px;">Create Administrator</h1>
 		<input type="email" name="email" class="grid-item" placeholder="Email Address" required autofocus><br>
-		<input type="password" name="a_password" class="grid-item" placeholder="Password" required><br>
+		<input type="password" name="a_password" class="grid-item" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required><br>
 		<input type="text" name="fname" class="grid-item" placeholder="First Name" required><br>
 		<input type="text" name="lname" class="grid-item" placeholder="Last Name" required><br>
 		<input type="text" name="address" class="grid-item" placeholder="Address" required><br>
