@@ -1,15 +1,17 @@
 <?php
-                //connect
-                $con = mysqli_connect('localhost', 'root', 'admin');
 
-                    mysqli_select_db($con, 'ffb_stats');
+$id = $_GET['id'];
+$dbname = "ffb_stats";
+$con = mysqli_connect("localhost", "root", "", $dbname);
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "DELETE FROM main WHERE id_pk = $id"; 
 
-                $sql = "DELETE FROM player WHERE ID_PK='$_GET[id]'";
-
-                //Execute the query
-                if(mysqli_query($con, $sql))
-                    header("refresh:l; url=deletepage.php");
-                else
-                    echo "Not Deleted";
-
-?>
+if (mysqli_query($con, $sql)) {
+    mysqli_close($con);
+    header('Location: delete_player.php');
+    exit;
+} else {
+    echo "Error deleting record";
+}

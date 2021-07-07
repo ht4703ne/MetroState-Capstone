@@ -15,6 +15,52 @@
   <link rel="stylesheet" type="text/css" href="css/styles_custom.css">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script type="text/javascript" src="scripts.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-weight: bold;
+      color: gray;
+    }
+
+    #add_admin_form {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    .grid {
+      background: white;
+    }
+
+    [class*='col-'] {
+      float: left;
+    }
+
+    .col-2-3 {
+      width: 66.66%;
+    }
+
+    .col-1-3 {
+      width: 33.33%;
+
+    }
+
+    .col-1-2 {
+      width: 100.00%;
+      text-align: center;
+    }
+  </style>
 
 </head>
 
@@ -26,7 +72,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading" style="color:#000080"><b>fantAlytics</b></div>
       <div class="list-group list-group-flush">
-        <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="index.php" class="list-group-item list-group-item-action bg-light">Analyzer</a>
         <a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
 
       </div>
@@ -72,78 +118,97 @@
         <div class="grid-container">
 
           <div class="grid-item">
-            <h1 class="mt-4" align="left" style="color:#000080"><b>fantAlytics</b></h1>
+            <h1 class="mt-4" align="left" style="color:#000080 ; font-size:75px;"><b>fantAlytics</b></h1>
             <h3 align="left" style="color: grey">Fantasy Football Trade Analyzer</h3>
           </div>
           <div class="grid-item"><button class="button" onclick="analyze()" style="background-color:#000080" style="vertical-align:middle"><span>Analyze <button onClick="history.go(0)" class="button" style="background-color:#00b300" style="vertical-align:middle"><span>Start Over </span></span></div>
 
-          <div class="grid-item" style="color:#000080" >
-            <h1>Team A</h1>
+          <div>
+
+
+            <!-- team a grid -->
+            <div class="grid" style="background-color:#f2f2f2;">
+
+              <div class="col-2-3">
+                <form class="signin" id="add_admin_form" method="post">
+                  <br>
+                  <h5 style="text-align: center; color:#000080;font-size:40px; font-weight: bold;">Team A - Receiving</h5>
+                  <input type="text" id="searcha" class="grid-item" placeholder="Add Player" required autofocus><br>
+                  <input type="text" id="searchc" class="grid-item" placeholder="Add Player" required><br>
+                  <input type="text" id="searche" class="grid-item" placeholder="Add Player" required><br>
+                  <br />
+                </form>
+              </div>
+
+              <div class="col-1-3">
+                <form class="signin" id="add_admin_form" method="post">
+                  <br>
+                  <h5 style="text-align: center; color:#000080;font-size:40px; font-weight: bold;">fantAlytics</h5>
+                  <input type="text" id="stat_team_a_search_a" class="grid-item" placeholder="" required autofocus readonly><br>
+                  <input type="text" id="stat_team_a_search_b" class="grid-item" placeholder="" required readonly><br>
+                  <input type="text" id="stat_team_a_search_c" class="grid-item" placeholder="" required readonly><br>
+                  <br />
+                </form>
+              </div>
+
+            </div>
+
           </div>
-          <div class="grid-item" style="color:#000080">
-            <h1>Team B</h1>
+
+          <!-- team b grid -->
+          <div class="grid" style="background-color:#f2f2f2;">
+
+            <div class="col-2-3">
+
+              <form class="signin" id="add_admin_form" method="post">
+                <br>
+                <h5 style="text-align: center; color:green;font-size:40px; font-weight: bold;">Team B - Receiving</h5>
+                <input type="text" id="searchb" class="grid-item" placeholder="Add Player" required autofocus><br>
+                <input type="text" id="searchd" class="grid-item" placeholder="Add Player" required><br>
+                <input type="text" id="searchf" class="grid-item" placeholder="Add Player" required><br>
+                <br />
+              </form>
+            </div>
+
+            <div class="col-1-3">
+              <form class="signin" id="add_admin_form" method="post">
+                <br>
+                <h5 style="text-align: center; color:green;font-size:40px; font-weight: bold;">fantAlytics</h5>
+                <input type="text" id="stat_team_b_search_a" class="grid-item" placeholder="" required autofocus readonly><br>
+                <input type="text" id="stat_team_b_search_b" class="grid-item" placeholder="" required readonly><br>
+                <input type="text" id="stat_team_b_search_c" class="grid-item" placeholder="" required readonly><br>
+                <br />
+              </form>
+            </div>
           </div>
+
+
+          <!-- player display grid -->
+          <div class="col-1-2">
+            <h5 style="text-align: center; color: black;"></h5>
+            <div id="displaya" style="font-size:35px;"></div>
+          </div>
+          <div class="col-1-2">
+            <h5 style="text-align: center; color: black;"></h5>
+            <div id="displayb" style="font-size:35px;"></div>
+          </div>
+
         </div>
 
-        <div class="grid-container2">
-
-          <div class="grid-item">
-            <h3 id="team_a_player">Player Name</h3>
-          </div>
-          <div class="grid-item">
-            <h3 id="team_a_stat">fantAlytics</h3>
-          </div>
-          <div class="grid-item">
-            <h3 id="team_b_player">Player Name</h3>
-          </div>
-          <div class="grid-item">
-            <h3 id="team_b_stat">fantAlytics</h3>
-          </div>
-
-          <div class="grid-item"><input type="text" id="searcha" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_a_search_a" placeholder="" readonly></div>
-          <div class="grid-item"><input type="text" id="searchb" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_b_search_a" placeholder="" readonly></div>
-          <div class="grid-item"><input type="text" id="searchc" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_a_search_b" placeholder="" readonly></div>
-          <div class="grid-item"><input type="text" id="searchd" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_b_search_b" placeholder="" readonly></div>
-          <div class="grid-item"><input type="text" id="searche" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_a_search_c" placeholder="" readonly></div>
-          <div class="grid-item"><input type="text" id="searchf" placeholder="Add Player"></div>
-          <div class="grid-item"><input type="text" id="stat_team_b_search_c" placeholder="" readonly></div>
-        </div>
-
-        <div class="grid-container">
-          <div class="grid-item">
-            <div id="displaya"></div>
-          </div>
-          <div class="grid-item">
-            <div id="displayb"></div>
-          </div>
-
-        </div>
       </div>
-
     </div>
-  </div>
-  <!-- /#page-content-wrapper -->
 
   </div>
-  <!-- /#wrapper -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+  </div>
 
 </body>
 
 </html>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

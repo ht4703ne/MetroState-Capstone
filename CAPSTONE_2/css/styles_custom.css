@@ -18,6 +18,9 @@
     text-align: center;
 }
 
+
+/*
+
 #team_a_stat {
     border-radius: 10px;
     padding: 20px;
@@ -39,14 +42,15 @@
 }
 
 #searcha {
-    border-radius: 10px;
-    border: 3px solid navy;
-    padding: 20px;
-    width: 475px;
-    height: 10px;
-    outline: none;
-    font-weight: 900;
-    color: navy;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: gray;
 }
 
 #searchb {
@@ -176,6 +180,8 @@
     text-align: center;
 }
 
+*/
+
 #displaya {
     font-weight: 900;
     color: navy;
@@ -268,16 +274,48 @@
     width: auto;
 }
 
-.column {
+#pleaseWork {
     float: left;
-    width: 50%;
-    padding: 10px;
-    height: 75px;
-    margin: auto;
+    width: 1000px;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #000080;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button2:hover span {
+    padding-right: 25px;
+}
+
+.button2:hover span:after {
+    opacity: 1;
+    right: 0;
 }

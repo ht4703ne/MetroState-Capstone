@@ -23,14 +23,15 @@ session_start();
 			
 			.button {
 				display: inline-block;
-				border-radius: 4px;
+				border-radius: 25px;
 				background-color: #000080;
 				border: none;
 				color: #FFFFFF;
 				text-align: center;
 				font-size: 28px;
-				padding: 20px;
-				width: 200px;
+				padding: 10px;
+				width: 400px;
+				height: 100px;
 				transition: all 0.5s;
 				cursor: pointer;
 				margin: 5px;
@@ -57,14 +58,16 @@ session_start();
 			}
 
 		.button:hover span:after {
-				opacity: 1;
+				opacity: 100;
 				right: 0;
     }
+
     .button-center {
       text-align: center;
       padding: 15px;
       margin: 15px;
     }
+
 </style>
 <head>
 
@@ -79,7 +82,8 @@ session_start();
 <div class= "button-center">
 <h2><a href="create_admin.php" class="grid-item"><button class="button"><span>Create Admin Account</span></h2>
 <h2><a href="delete_admin.php" class="grid-item"><button class="button"><span>Delete Admin Account</span></h2>
-<h2><a href="Deletepage.php" class="grid-item"><button class="button"><span>Add/Delete Player</span></h2>
+<h2><a href="add_player.php" class="grid-item"><button class="button"><span>Add Player</span></h2>
+<h2><a href="delete_player.php" class="grid-item"><button class="button"><span>Delete Player</span></h2>
 <h2><a href="logout.php" class="grid-item"><button class="button"><span>Logout</span></h2>
 </div>
 

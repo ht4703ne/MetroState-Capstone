@@ -8,6 +8,7 @@ ini_set('display_errors', 1);
 <!DOCTYPE html>
 <html lang="en">
 <style>
+
       #display {
 				font-weight: 900;
 				color: navy;
@@ -69,6 +70,19 @@ ini_set('display_errors', 1);
       padding: 15px;
       margin: 15px;
     }
+
+	#admin {
+			border-radius: 10px;
+			border: 3px solid navy;
+			font-size: 20px;
+			height: 60px;
+			width: 400px;
+			color: navy;
+			font-weight: bold;
+			text-align: center;
+
+		}
+
 </style>
 <?php  
   $admin_set = find_all_admin_names();
@@ -112,17 +126,17 @@ ini_set('display_errors', 1);
   }
 mysqli_close($link);
 ?>
-
+<a href='admin.php' class="list-group-item list-group-item-action bg-light" style="text-align: center"><strong>Admin Home Page</strong></a>
 <form class="delete" name= "user_ID" method="post"> 
     <div style="text-align: center">
         <br><h1 class="h3 mb-3 font-weight-normal" id="form-labels"><strong>Delete an account</strong></h1>
         <select name="user_ID" id="admin">
                 <?php while($admin = mysqli_fetch_assoc($admin_set)) { ?>
-                    <option value="<?php echo ($admin['user_ID']) ?>"><?php echo($admin['user_ID']) . " " ?><?php echo (trim($admin['email']))?></option>
+                    <option ; value="<?php echo ($admin['user_ID']) ?>"><?php echo($admin['user_ID']) . " " ?><?php echo (trim($admin['email']))?></option>
                 <?php } ?>
         </select><br /> <br />
         <button class="button" type="submit"><span>Delete Admin</span></button> <br /> <br /> <br />
 		<a href = "<?php $_SERVER['PHP_SELF']; ?>">Refresh</a><br /><br />
-        <a href='admin.php' class="list-group-item list-group-item-action bg-light"><strong>Admin Home Page</strong></a>
+        
     </div>
 </form>

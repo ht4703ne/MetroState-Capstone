@@ -16,16 +16,20 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts.js"></script>
 
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 	<style>
 		#posSelect {
 			border-radius: 10px;
 			border: 3px solid navy;
 			font-size: 20px;
 			height: 60px;
-			width: 100px;
+			width: 280px;
 			color: navy;
 			font-weight: bold;
 			text-align: center;
+
 		}
 	</style>
 
@@ -39,9 +43,8 @@
 		<div class="bg-light border-right" id="sidebar-wrapper">
 			<div class="sidebar-heading"><b>fantAlytics</b></div>
 			<div class="list-group list-group-flush">
-				<a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+				<a href="index.php" class="list-group-item list-group-item-action bg-light">Analyzer</a>
 				<a href="topPlayers.php" class="list-group-item list-group-item-action bg-light">Top Players</a>
-
 			</div>
 		</div>
 		<!-- /#sidebar-wrapper -->
@@ -79,44 +82,26 @@
 				</div>
 			</nav>
 
-			<div class="row">
-				<div class="column">
+			<div>
+
+				<div>
 					<h1 style="color:#000080;font-size:50px; font-weight: bold; padding-left: 10px;">Top Players</h1>
 				</div>
-				<div class="column" align="right">
+				<div>
+
 					<select id="posSelect" onchange="TopPlayerFilter()">
 
-						<option selected value="select">-select-</option>
-						<option value="qb">QB</option>
-						<option value="wr">WR</option>
-						<option value="rb">RB</option>
-						<option value="te">TE</option>
-						<option value="dst">D/ST</option>
+						<option selected value="select" disabled selected>-select-</option>
+						<option value="qb">Quarterback</option>
+						<option value="wr">Wide Receiver</option>
+						<option value="rb">Running Back</option>
+						<option value="te">Tight End</option>
+						<option value="dst">Defense/Special Teams</option>
 
-					</select><br><br>
+					</select>
 				</div>
-			</div>
 
-			<script>
-				function TopPlayerFilter() {
-					var input, filter, table, tr, td, i, txtValue;
-					position = document.getElementById("posSelect");
-					filter = position.value.toUpperCase();
-					table = document.getElementById("players");
-					tr = table.getElementsByTagName("tr");
-					for (i = 0; i < tr.length; i++) {
-						td = tr[i].getElementsByTagName("td")[2];
-						if (td) {
-							txtValue = td.textContent || td.innerText;
-							if (txtValue.toUpperCase().indexOf(filter) > -1) {
-								tr[i].style.display = "";
-							} else {
-								tr[i].style.display = "none";
-							}
-						}
-					}
-				}
-			</script>
+			</div>
 
 			<?php
 
@@ -125,7 +110,6 @@
 			if (mysqli_connect_errno()) {
 				echo "Failed to connect to MySQL: " . mysqli_connect_error();
 			}
-
 
 			$result = mysqli_query($con, "SELECT name, team, pos, gms,
 
@@ -238,6 +222,34 @@
 
 			?>
 
+			<script>
+				$("#menu-toggle").click(function(e) {
+					e.preventDefault();
+					$("#wrapper").toggleClass("toggled");
+				});
+			</script>
+
 </body>
 
 </html>
+
+<script>
+	function TopPlayerFilter() {
+		var input, filter, table, tr, td, i, txtValue;
+		position = document.getElementById("posSelect");
+		filter = position.value.toUpperCase();
+		table = document.getElementById("players");
+		tr = table.getElementsByTagName("tr");
+		for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[2];
+			if (td) {
+				txtValue = td.textContent || td.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					tr[i].style.display = "";
+				} else {
+					tr[i].style.display = "none";
+				}
+			}
+		}
+	}
+</script>
